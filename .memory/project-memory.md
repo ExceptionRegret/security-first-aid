@@ -22,6 +22,7 @@ Build an open-source deterministic security scanner that helps repository owners
 - The package is now published to npm as `security-first-aid@0.1.2`.
 - Public execution through `npx security-first-aid@latest ...` has been verified, including the no-argument quick-start guide.
 - Global npm installs now print a post-install quick-start guide.
+- README now includes a renamed example screenshot asset under `docs/assets/` plus an example output section for GitHub and npm users.
 - Fixture `.env` files under `tests/fixtures/` are now intentionally unignored so CI and local scans exercise the same secret/env rules.
 - Release hardening now includes a Keep a Changelog file, release validation scripts, and a tag-driven GitHub Actions release workflow.
 - CLI no-argument and help-flag behavior now shows a real quick-start guide for npm and npx users.

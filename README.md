@@ -17,6 +17,7 @@ It is built for open-source maintainers, solo developers, and small teams that n
 - [What is implemented](#what-is-implemented)
 - [Quick start](#quick-start)
 - [Install options](#install-options)
+- [Example output](#example-output)
 - [How to make it work with npm and npx](#how-to-make-it-work-with-npm-and-npx)
 - [Usage](#usage)
 - [Repository policy](#repository-policy)
@@ -229,6 +230,35 @@ Then run:
 
 ```bash
 sfa scan . --format terminal
+```
+
+## Example output
+
+Real Markdown report excerpt captured from the project:
+
+![Security First Aid markdown report example](docs/assets/security-first-aid-markdown-report-example.png)
+
+Generate a comparable report from any repository with:
+
+```bash
+sfa scan . --format markdown --output ./reports/security-report.md
+```
+
+Terminal output example from the bundled insecure fixture:
+
+```text
+Security First Aid
+Target: ./tests/fixtures/insecure-service
+Findings: 15
+High: 6  Medium: 7  Low: 2
+
+[HIGH] SFA_SECRET_001 .env - Environment variable SECRET_KEY appears to contain a hardcoded secret.
+[HIGH] SFA_GHA_001 .github/workflows/deploy.yml - GitHub Actions workflow grants write-all permissions.
+[HIGH] SFA_GHA_003 .github/workflows/deploy.yml - Workflow is triggered by pull_request_target.
+[HIGH] SFA_GHA_004 .github/workflows/deploy.yml - Workflow uses curl piped to bash.
+[HIGH] SFA_CONFIG_003 config.json - Session cookie configuration disables the secure flag.
+[HIGH] SFA_CONFIG_005 config.json - Configuration combines wildcard CORS origins with credentialed requests.
+[MEDIUM] SFA_ENV_001 .env - Repository contains a `.env` file rather than only a template or example.
 ```
 
 ## How to make it work with npm and npx
