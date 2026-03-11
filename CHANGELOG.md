@@ -6,6 +6,12 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-03-11
+
+### Added
+
+- Global npm installs now print a short post-install quick-start guide so users immediately see how to run the CLI.
+
 ## [0.1.1] - 2026-03-11
 
 ### Added

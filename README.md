@@ -102,6 +102,8 @@ npm install -g security-first-aid
 sfa scan . --format terminal
 ```
 
+Global npm installs now print a short quick-start message after installation.
+
 If you just want the built-in guide:
 
 ```bash
@@ -198,7 +200,7 @@ npm pack
 Install that tarball globally:
 
 ```bash
-npm install -g ./security-first-aid-0.1.0.tgz
+npm install -g ./security-first-aid-0.1.2.tgz
 ```
 
 Then run:
@@ -227,7 +229,7 @@ Automated release path:
 1. update `package.json` to the target version
 2. add the matching release section to `CHANGELOG.md`
 3. commit the release changes
-4. push a tag like `v0.1.1`
+4. push a tag like `v0.1.2`
 
 The `Release` workflow will:
 
@@ -287,7 +289,7 @@ npx @your-org/security-first-aid@latest scan . --format terminal
 
 Current published version:
 
-- `security-first-aid@0.1.1`
+- `security-first-aid@0.1.2`
 
 ## Usage
 
@@ -511,7 +513,7 @@ npm link
 Or reinstall the tarball/global package:
 
 ```bash
-npm install -g ./security-first-aid-0.1.0.tgz
+npm install -g ./security-first-aid-0.1.2.tgz
 ```
 
 ### PowerShell blocks `sfa.ps1`
@@ -534,7 +536,7 @@ That only works after the package is published to npm. Before publishing, use on
 
 - `node ./src/cli/index.js ...`
 - `npm link` then `sfa ...`
-- `npm pack` then `npm install -g ./security-first-aid-0.1.0.tgz`
+- `npm pack` then `npm install -g ./security-first-aid-0.1.2.tgz`
 
 ## License
 

@@ -19,8 +19,9 @@ Build an open-source deterministic security scanner that helps repository owners
 - npm manifest normalization now uses a valid `bin` path and passes `npm publish --dry-run`.
 - The public GitHub repository now exists at `https://github.com/ExceptionRegret/security-first-aid`.
 - The initial `main` branch commit has been pushed to GitHub.
-- The package is now published to npm as `security-first-aid@0.1.1`.
+- The package is now published to npm as `security-first-aid@0.1.2`.
 - Public execution through `npx security-first-aid@latest ...` has been verified, including the no-argument quick-start guide.
+- Global npm installs now print a post-install quick-start guide.
 - Release hardening now includes a Keep a Changelog file, release validation scripts, and a tag-driven GitHub Actions release workflow.
 - CLI no-argument and help-flag behavior now shows a real quick-start guide for npm and npx users.
 - Additional implemented rules now cover `pull_request_target` workflows and wildcard CORS in JSON config.

@@ -16,6 +16,8 @@ sfa
 
 If you run `sfa` with no arguments, the CLI now prints a built-in quick-start guide instead of a minimal usage block.
 
+If you install the package globally from npm, the installer also prints a short post-install quick-start message.
+
 PowerShell note:
 
 - If PowerShell prefers a blocked `sfa.ps1` shim, run `sfa.cmd ...` or `cmd /c sfa ...`.

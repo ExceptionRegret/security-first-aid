@@ -1,6 +1,6 @@
 {
   "name": "security-first-aid",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Deterministic, local-first security scanner for repositories and CI/CD configuration.",
   "homepage": "https://github.com/ExceptionRegret/security-first-aid#readme",
   "type": "module",
@@ -17,6 +17,7 @@
   },
   "files": [
     "src",
+    "scripts/postinstall.mjs",
     "CHANGELOG.md",
     "README.md",
     "LICENSE"
@@ -25,6 +26,7 @@
     "sfa": "src/cli/index.js"
   },
   "scripts": {
+    "postinstall": "node scripts/postinstall.mjs",
     "test": "node --test --experimental-test-isolation=none",
     "check": "node --test --experimental-test-isolation=none && node scripts/smoke.mjs",
     "scan:fixture": "node ./src/cli/index.js scan ./tests/fixtures/insecure-service --format markdown",
