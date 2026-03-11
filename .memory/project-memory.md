@@ -17,6 +17,8 @@ Build an open-source deterministic security scanner that helps repository owners
 - README now documents install paths for source use, global linking, npm tarball installation, and post-publish npm/npx usage.
 - Package metadata now includes homepage, repository, and bugs URLs for the intended GitHub repository `ExceptionRegret/security-first-aid`.
 - npm manifest normalization now uses a valid `bin` path and passes `npm publish --dry-run`.
+- The public GitHub repository now exists at `https://github.com/ExceptionRegret/security-first-aid`.
+- The initial `main` branch commit has been pushed to GitHub.
 - Additional implemented rules now cover `pull_request_target` workflows and wildcard CORS in JSON config.
 - The CLI now supports `rules list` and `scan --output`.
 - Additional implemented rules now cover pipe-to-shell workflow steps, floating Docker tags, and insecure session cookie flags.
@@ -51,7 +53,6 @@ Build an open-source deterministic security scanner that helps repository owners
 
 - rule noise could damage trust early
 - naming and packaging decisions are still open
-- GitHub remote creation and push remain blocked until the local GitHub CLI token is re-authenticated successfully
 - npm publishing still requires a valid one-time password or a granular access token with `bypass 2fa`
 - the unscoped npm package name may already be taken, which would force a scoped publish path
 - implementation may drift unless docs remain the source of truth
