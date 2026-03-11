@@ -17,6 +17,7 @@
   },
   "files": [
     "src",
+    "CHANGELOG.md",
     "README.md",
     "LICENSE"
   ],
@@ -26,7 +27,11 @@
   "scripts": {
     "test": "node --test --experimental-test-isolation=none",
     "check": "node --test --experimental-test-isolation=none && node scripts/smoke.mjs",
-    "scan:fixture": "node ./src/cli/index.js scan ./tests/fixtures/insecure-service --format markdown"
+    "scan:fixture": "node ./src/cli/index.js scan ./tests/fixtures/insecure-service --format markdown",
+    "pack:check": "npm pack --dry-run --cache ./.npm-cache",
+    "release:validate": "node scripts/validate-release.mjs",
+    "release:notes": "node scripts/extract-release-notes.mjs",
+    "release:check": "npm run check && npm run release:validate && npm run pack:check"
   },
   "engines": {
     "node": ">=22.0.0"

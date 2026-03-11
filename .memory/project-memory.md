@@ -21,6 +21,7 @@ Build an open-source deterministic security scanner that helps repository owners
 - The initial `main` branch commit has been pushed to GitHub.
 - The package is now published to npm as `security-first-aid@0.1.0`.
 - Public execution through `npx security-first-aid@latest ...` has been verified.
+- Release hardening now includes a Keep a Changelog file, release validation scripts, and a tag-driven GitHub Actions release workflow.
 - Additional implemented rules now cover `pull_request_target` workflows and wildcard CORS in JSON config.
 - The CLI now supports `rules list` and `scan --output`.
 - Additional implemented rules now cover pipe-to-shell workflow steps, floating Docker tags, and insecure session cookie flags.

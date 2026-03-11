@@ -1,0 +1,24 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
+
+## [Unreleased]
+
+### Added
+
+- Tag-driven GitHub Actions release workflow that validates version metadata, builds a tarball and checksum, publishes to npm, and creates a GitHub release.
+- Release helper scripts for changelog extraction and version/changelog validation.
+- npm release scripts for repeatable validation and package checks.
+
+## [0.1.0] - 2026-03-11
+
+### Added
+
+- Deterministic scanner CLI with `scan`, `baseline create`, and `rules list` commands.
+- Terminal, JSON, Markdown, and SARIF reporters.
+- Repository policy loading from `.sfa.json` and baseline suppression/generation.
+- Fifteen deterministic rules covering secrets, GitHub Actions, Docker, and common JSON config risks.
+- Reusable GitHub Action wrapper and verification workflow.
+- Production documentation baseline including ADRs, SOPs, contributing guidance, and durable project memory.

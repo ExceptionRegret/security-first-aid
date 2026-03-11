@@ -196,11 +196,32 @@ The package metadata needed for npm and npx is already in place:
 - package name: `security-first-aid`
 - executable binary: `sfa`
 - entry point: `./src/cli/index.js`
-- publishable file whitelist: `src`, `README.md`, `LICENSE`
+- publishable file whitelist: `src`, `CHANGELOG.md`, `README.md`, `LICENSE`
 
 The package is now published to the npm registry as `security-first-aid`.
 
 ### Publish workflow
+
+Future releases can be shipped through GitHub Actions instead of repeating the manual publish sequence.
+
+Automated release path:
+
+1. update `package.json` to the target version
+2. add the matching release section to `CHANGELOG.md`
+3. commit the release changes
+4. push a tag like `v0.1.1`
+
+The `Release` workflow will:
+
+- validate version and changelog consistency
+- run the release verification suite
+- build a tarball and SHA-256 checksum
+- publish to npm using the repository `NPM_TOKEN` secret
+- create a GitHub release using the matching changelog notes
+
+Required GitHub secret:
+
+- `NPM_TOKEN`
 
 Verify the packed contents:
 
@@ -245,6 +266,10 @@ If you publish under a scope, use the scoped package name instead:
 ```bash
 npx @your-org/security-first-aid@latest scan . --format terminal
 ```
+
+Current published version:
+
+- `security-first-aid@0.1.0`
 
 ## Usage
 
@@ -416,6 +441,9 @@ node scripts/smoke.mjs
 npm test
 npm run check
 npm run scan:fixture
+npm run release:validate
+npm run pack:check
+npm run release:check
 ```
 
 ## Project structure

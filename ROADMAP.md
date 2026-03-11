@@ -87,6 +87,13 @@ Deliverables:
 - severity threshold and policy config
 - release automation
 
+Current progress:
+
+- reusable GitHub Action implemented
+- SARIF reporter implemented
+- severity threshold and repository policy config implemented
+- tag-driven GitHub release automation implemented
+
 Exit criteria:
 
 - CI mode is deterministic
