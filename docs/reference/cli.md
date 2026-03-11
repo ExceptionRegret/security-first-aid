@@ -16,7 +16,14 @@ sfa
 
 If you run `sfa` with no arguments, the CLI now prints a built-in quick-start guide instead of a minimal usage block.
 
-If you install the package globally from npm, the installer also prints a short post-install quick-start message.
+If you install the package globally from npm, use this as the first-run path:
+
+```bash
+npm install -g security-first-aid@latest
+sfa
+```
+
+The `sfa` command is the reliable built-in guide. npm may suppress or reduce post-install script output depending on install mode and client configuration.
 
 PowerShell note:
 

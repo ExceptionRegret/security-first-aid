@@ -102,7 +102,22 @@ npm install -g security-first-aid
 sfa scan . --format terminal
 ```
 
-Global npm installs now print a short quick-start message after installation.
+Recommended first run after install:
+
+```bash
+npm install -g security-first-aid@latest
+sfa
+```
+
+Then run one of these:
+
+```bash
+sfa scan . --format terminal
+sfa rules list --format json
+sfa baseline create . --output ./.sfa-baseline.json
+```
+
+Important: npm may not always show lifecycle output clearly during `npm install -g`, depending on the user's npm configuration. The reliable built-in guide is `sfa` or `sfa --help`.
 
 If you just want the built-in guide:
 
@@ -145,13 +160,20 @@ node ./src/cli/index.js rules list --format json
 ### Option 1: Install from npm
 
 ```bash
-npm install -g security-first-aid
+npm install -g security-first-aid@latest
 ```
 
-Then run:
+Then immediately run:
+
+```bash
+sfa
+```
+
+Then choose a command:
 
 ```bash
 sfa scan . --format terminal
+sfa rules list --format json
 ```
 
 ### Option 2: Run with npx

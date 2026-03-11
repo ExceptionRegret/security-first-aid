@@ -27,6 +27,7 @@ npm-debug.log*
 .env.*
 !.env.example
 !.env.sample
+!tests/fixtures/**/.env
 
 # OS and editor noise
 .DS_Store
