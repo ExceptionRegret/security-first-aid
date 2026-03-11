@@ -2,6 +2,7 @@
 
 ![Node >=22](https://img.shields.io/badge/node-%3E%3D22-5FA04E?logo=nodedotjs&logoColor=white)
 ![License MIT](https://img.shields.io/badge/license-MIT-1677ff)
+![npm version](https://img.shields.io/npm/v/security-first-aid)
 ![Mode deterministic](https://img.shields.io/badge/mode-deterministic-222222)
 ![Rules 15](https://img.shields.io/badge/rules-15-d97706)
 
@@ -91,6 +92,19 @@ The current v1 rule pack implements 15 deterministic checks across:
 Run the CLI directly from the repository:
 
 ```bash
+npx security-first-aid@latest scan . --format terminal
+```
+
+Or install it globally:
+
+```bash
+npm install -g security-first-aid
+sfa scan . --format terminal
+```
+
+You can still run the CLI directly from the repository:
+
+```bash
 node ./src/cli/index.js scan . --format terminal
 ```
 
@@ -114,7 +128,25 @@ node ./src/cli/index.js rules list --format json
 
 ## Install options
 
-### Option 1: Run from source
+### Option 1: Install from npm
+
+```bash
+npm install -g security-first-aid
+```
+
+Then run:
+
+```bash
+sfa scan . --format terminal
+```
+
+### Option 2: Run with npx
+
+```bash
+npx security-first-aid@latest scan . --format terminal
+```
+
+### Option 3: Run from source
 
 This is the simplest option while developing or testing locally:
 
@@ -122,7 +154,7 @@ This is the simplest option while developing or testing locally:
 node ./src/cli/index.js scan . --format terminal
 ```
 
-### Option 2: Link it globally from this repository
+### Option 4: Link it globally from this repository
 
 From the repository root:
 
@@ -137,7 +169,7 @@ sfa scan . --format terminal
 sfa rules list --format json
 ```
 
-### Option 3: Install the packed tarball locally
+### Option 5: Install the packed tarball locally
 
 Create a distributable package:
 
@@ -166,9 +198,9 @@ The package metadata needed for npm and npx is already in place:
 - entry point: `./src/cli/index.js`
 - publishable file whitelist: `src`, `README.md`, `LICENSE`
 
-What remains is publishing the package to the npm registry.
+The package is now published to the npm registry as `security-first-aid`.
 
-### Before publishing
+### Publish workflow
 
 Verify the packed contents:
 
