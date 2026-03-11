@@ -14,6 +14,8 @@ After linking, the global command is:
 sfa
 ```
 
+If you run `sfa` with no arguments, the CLI now prints a built-in quick-start guide instead of a minimal usage block.
+
 PowerShell note:
 
 - If PowerShell prefers a blocked `sfa.ps1` shim, run `sfa.cmd ...` or `cmd /c sfa ...`.
@@ -85,3 +87,21 @@ Examples:
 sfa rules list
 sfa rules list --format json
 ```
+
+## Help output
+
+Use any of these to print the built-in guide:
+
+```bash
+sfa
+sfa help
+sfa --help
+sfa -h
+```
+
+The help output includes:
+
+- quick-start commands
+- command usage
+- examples
+- links to the README and npm package page

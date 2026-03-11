@@ -102,6 +102,18 @@ npm install -g security-first-aid
 sfa scan . --format terminal
 ```
 
+If you just want the built-in guide:
+
+```bash
+npx security-first-aid@latest
+```
+
+or:
+
+```bash
+sfa --help
+```
+
 You can still run the CLI directly from the repository:
 
 ```bash
@@ -144,6 +156,12 @@ sfa scan . --format terminal
 
 ```bash
 npx security-first-aid@latest scan . --format terminal
+```
+
+To show the built-in quick-start guide instead of running a scan:
+
+```bash
+npx security-first-aid@latest
 ```
 
 ### Option 3: Run from source
@@ -269,7 +287,7 @@ npx @your-org/security-first-aid@latest scan . --format terminal
 
 Current published version:
 
-- `security-first-aid@0.1.0`
+- `security-first-aid@0.1.1`
 
 ## Usage
 
@@ -320,6 +338,7 @@ Examples:
 ```bash
 sfa rules list
 sfa rules list --format json
+sfa --help
 ```
 
 ## Repository policy

@@ -9,10 +9,34 @@ import { renderMarkdownReport } from "../reporters/render-markdown-report.js";
 import { renderSarifReport } from "../reporters/render-sarif-report.js";
 import { renderTerminalReport } from "../reporters/render-terminal-report.js";
 
-const usageText = `Usage:
-  sfa scan <target-path> [--format json|markdown|sarif|terminal] [--baseline <path>] [--config <path>] [--severity-threshold low|medium|high|critical]
+const helpText = `Security First Aid
+
+Deterministic, local-first security scanning for repositories and CI/CD configuration.
+
+Quick start:
+  sfa scan . --format terminal
+  sfa rules list --format json
+  sfa baseline create . --output ./.sfa-baseline.json
+
+Usage:
+  sfa scan <target-path> [--format json|markdown|sarif|terminal] [--baseline <path>] [--config <path>] [--severity-threshold low|medium|high|critical] [--output <path>]
   sfa baseline create <target-path> [--output <path>] [--config <path>]
+  sfa rules list [--format json|markdown|terminal]
+  sfa help
+
+Examples:
+  sfa scan . --format terminal
+  sfa scan . --format markdown --output ./reports/security-report.md
+  sfa scan . --format sarif --baseline ./.sfa-baseline.json
+  sfa baseline create . --output ./.sfa-baseline.json
+  sfa rules list --format json
+
+More:
+  README: https://github.com/ExceptionRegret/security-first-aid#readme
+  npm:    https://www.npmjs.com/package/security-first-aid
 `;
+
+const usageText = helpText;
 
 const severityRank = {
   low: 1,
@@ -210,6 +234,14 @@ const renderRuleCatalog = (catalog, format) => {
 export const executeCli = async (argv) => {
   const [command, ...rest] = argv;
 
+  if (!command || command === "help" || command === "--help" || command === "-h") {
+    return {
+      exitCode: 0,
+      stdout: `${helpText}\n`,
+      stderr: ""
+    };
+  }
+
   if (command === "scan") {
     const parsed = parseScanOptions(rest);
 
@@ -291,6 +323,6 @@ export const executeCli = async (argv) => {
   return {
     exitCode: 1,
     stdout: "",
-    stderr: usageText
+    stderr: `Unknown command: ${command}\n\n${helpText}`
   };
 };

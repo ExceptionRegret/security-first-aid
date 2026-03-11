@@ -118,3 +118,30 @@ test("CLI rules list returns the rule catalog in JSON", async () => {
   assert.equal(payload.rules.some((rule) => rule.id === "SFA_CONFIG_005"), true);
   assert.equal(payload.rules.length >= 15, true);
 });
+
+test("CLI with no arguments prints a quick-start guide", async () => {
+  const result = await executeCli([]);
+
+  assert.equal(result.exitCode, 0);
+  assert.match(result.stdout, /Security First Aid/);
+  assert.match(result.stdout, /Quick start:/);
+  assert.match(result.stdout, /sfa scan \. --format terminal/);
+  assert.match(result.stdout, /sfa rules list --format json/);
+});
+
+test("CLI supports explicit help flags", async () => {
+  const result = await executeCli(["--help"]);
+
+  assert.equal(result.exitCode, 0);
+  assert.match(result.stdout, /Usage:/);
+  assert.match(result.stdout, /sfa baseline create/);
+  assert.match(result.stdout, /sfa help/);
+});
+
+test("CLI unknown command points users to the built-in guide", async () => {
+  const result = await executeCli(["wat"]);
+
+  assert.equal(result.exitCode, 1);
+  assert.match(result.stderr, /Unknown command: wat/);
+  assert.match(result.stderr, /Quick start:/);
+});

@@ -1,6 +1,6 @@
 {
   "name": "security-first-aid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Deterministic, local-first security scanner for repositories and CI/CD configuration.",
   "homepage": "https://github.com/ExceptionRegret/security-first-aid#readme",
   "type": "module",

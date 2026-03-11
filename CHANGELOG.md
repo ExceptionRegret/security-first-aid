@@ -6,11 +6,14 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-03-11
+
 ### Added
 
 - Tag-driven GitHub Actions release workflow that validates version metadata, builds a tarball and checksum, publishes to npm, and creates a GitHub release.
 - Release helper scripts for changelog extraction and version/changelog validation.
 - npm release scripts for repeatable validation and package checks.
+- Built-in CLI quick-start guide for no-argument, `help`, `--help`, and `-h` invocation.
 
 ## [0.1.0] - 2026-03-11
 
