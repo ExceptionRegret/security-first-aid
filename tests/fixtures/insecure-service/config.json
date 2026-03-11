@@ -1,0 +1,13 @@
+{
+  "debug": true,
+  "cors": {
+    "origin": "*",
+    "credentials": true
+  },
+  "session": {
+    "cookie": {
+      "secure": false,
+      "httpOnly": false
+    }
+  }
+}

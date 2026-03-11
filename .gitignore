@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build and coverage output
+dist/
+coverage/
+.nyc_output/
+
+# Generated reports and local package artifacts
+reports/
+*.tgz
+
+# Local package manager caches
+.npm-cache/
+.npm/
+.pnpm-store/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Security scanner local state
+.sfa-baseline.json
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/

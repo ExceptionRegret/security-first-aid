@@ -1,0 +1,42 @@
+{
+  "name": "security-first-aid",
+  "version": "0.1.0",
+  "description": "Deterministic, local-first security scanner for repositories and CI/CD configuration.",
+  "homepage": "https://github.com/ExceptionRegret/security-first-aid#readme",
+  "type": "module",
+  "main": "./src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExceptionRegret/security-first-aid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ExceptionRegret/security-first-aid/issues"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "sfa": "src/cli/index.js"
+  },
+  "scripts": {
+    "test": "node --test --experimental-test-isolation=none",
+    "check": "node --test --experimental-test-isolation=none && node scripts/smoke.mjs",
+    "scan:fixture": "node ./src/cli/index.js scan ./tests/fixtures/insecure-service --format markdown"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": [
+    "security",
+    "scanner",
+    "cli",
+    "static-analysis",
+    "cicd"
+  ],
+  "license": "MIT"
+}

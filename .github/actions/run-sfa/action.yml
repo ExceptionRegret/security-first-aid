@@ -1,0 +1,36 @@
+name: Run Security First Aid
+description: Run the Security First Aid scanner against a target path.
+
+inputs:
+  target-path:
+    description: Repository path to scan
+    required: false
+    default: "."
+  format:
+    description: Output format
+    required: false
+    default: "terminal"
+  severity-threshold:
+    description: Exit threshold for findings
+    required: false
+    default: "high"
+  baseline:
+    description: Optional baseline file path
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - name: Run scanner
+      shell: bash
+      run: |
+        BASELINE_ARGS=""
+        if [ -n "${{ inputs.baseline }}" ]; then
+          BASELINE_ARGS="--baseline ${{ inputs.baseline }}"
+        fi
+
+        node ./src/cli/index.js scan "${{ inputs.target-path }}" \
+          --format "${{ inputs.format }}" \
+          --severity-threshold "${{ inputs.severity-threshold }}" \
+          ${BASELINE_ARGS}

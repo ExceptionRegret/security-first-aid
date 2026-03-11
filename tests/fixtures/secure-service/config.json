@@ -1,0 +1,15 @@
+{
+  "debug": false,
+  "cors": {
+    "origin": [
+      "https://example.com"
+    ],
+    "credentials": false
+  },
+  "session": {
+    "cookie": {
+      "secure": true,
+      "httpOnly": true
+    }
+  }
+}
