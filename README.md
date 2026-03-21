@@ -1,5 +1,8 @@
 # Security First Aid
 
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ea4aaa?logo=github-sponsors)](https://github.com/sponsors/ExceptionRegret)
+
+
 ![Node >=22](https://img.shields.io/badge/node-%3E%3D22-5FA04E?logo=nodedotjs&logoColor=white)
 ![License MIT](https://img.shields.io/badge/license-MIT-1677ff)
 ![npm version](https://img.shields.io/npm/v/security-first-aid)
